@@ -13,7 +13,7 @@ router.get('/:L1/:L2/:L3/:L4/:theta1/:theta2', (req, res) => {
     if (L1 + L2 < L3 + L4 || L1 + L3 < L2 + L4 || L1 + L4 < L2 + L3) {
         res.send({
             "message":
-                "ERROR : The given linkages do not form a quadrilateral with the given lengths",
+                "ERROR : The given linkages do not form a quadrilateral",
         });
         return;
     }
