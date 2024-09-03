@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/help', (req, res) => {
+router.get('/1', (req, res) => {
     const ans = {
         "message": "Server Active",
         "status": 200,
