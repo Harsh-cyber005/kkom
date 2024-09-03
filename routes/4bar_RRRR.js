@@ -8,6 +8,16 @@ router.get('/:L1/:L2/:L3/:L4/:theta1/:theta2', (req, res) => {
     let L2 = req.params.L2;
     let L3 = req.params.L3;
     let L4 = req.params.L4;
+
+    //check if L1, L2, L3, L4 form a quadrilateral
+    if (L1 + L2 < L3 + L4 || L1 + L3 < L2 + L4 || L1 + L4 < L2 + L3) {
+        res.send({
+            "message":
+                "ERROR : The given linkages do not form a quadrilateral with the given lengths",
+        });
+        return;
+    }
+
     let theta1 = req.params.theta1;
     let theta2 = req.params.theta2;
 
